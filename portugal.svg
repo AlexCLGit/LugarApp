@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 580" width="480" height="580" fill="none">
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0v28" stroke="#dce6d4" stroke-width=".6"/></pattern><g id="pin"><circle r="12" fill="#d7edbb"/><circle r="6" fill="#145c3d" stroke="#fff" stroke-width="2"/></g></defs>
+<path d="M55 70h370v430H55Z" fill="url(#grid)" opacity=".6"/>
+<path d="m210 60 24 8 13-7 18 12 26-5 27 14 12 20-15 22 4 22-19 17-3 32-24 23 8 25-13 22 8 25-9 23 14 25-8 26 15 25-3 28-27 13-11 24-35 5-10 23-41-3-24 9-18-11-9 5-9-15 12-25 1-23-17-15-6-24 16-6-4-19-24-10-6-26 12-20 7-37 8-32 2-29 7-37 4-27 10-25-1-24 13-14 18 1 9-13Z" fill="#d4e3c7" stroke="#b3cba2" stroke-width="2" stroke-linejoin="round"/>
+<path d="m206 114-6 45-13 102-38 87 34 111" stroke="#97b281" stroke-width="1.5" stroke-dasharray="4 6"/>
+<use href="#pin" x="206" y="114"/><use href="#pin" x="200" y="159"/><use href="#pin" x="187" y="261"/><use href="#pin" x="149" y="348"/><use href="#pin" x="183" y="459"/>
+<g font-family="Arial,sans-serif" font-size="15" fill="#245238" font-weight="600"><text x="230" y="119">Braga</text><text x="224" y="164">Porto</text><text x="211" y="266">Coimbra</text><text x="52" y="353">Lisboa</text><text x="207" y="464">Faro</text></g>
+<g transform="translate(328 385)"><rect x="-10" y="-5" width="115" height="112" rx="10" fill="#f7faf3" stroke="#cbdcc0"/><path d="m15 37 8-13 16-5 13 3-10 9-18 7Z" fill="#d4e3c7" stroke="#b3cba2"/><use href="#pin" x="35" y="37"/><text x="13" y="74" font-family="Arial,sans-serif" font-size="13" fill="#245238" font-weight="600">Funchal</text><text x="13" y="91" font-family="Arial,sans-serif" font-size="10" fill="#65785a">MADEIRA</text></g>
+<text x="45" y="267" transform="rotate(-90 45 267)" font-family="Arial,sans-serif" font-size="9" letter-spacing="4" fill="#8ca47b">OCEANO ATLÂNTICO</text>
+<g transform="translate(390 90)"><path d="M0 25V-2m-5 10 5-10 5 10" stroke="#7c9868" stroke-width="1.2"/><text x="0" y="-12" text-anchor="middle" font-size="10" font-family="Arial,sans-serif" fill="#7c9868">N</text></g>
+<text x="240" y="548" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.5" fill="#819575">MAPA ILUSTRATIVO · SEM ESCALA</text>
+</svg>

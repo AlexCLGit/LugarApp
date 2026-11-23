@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#145c3d">
+  <meta name="description" content="Lugar — estacionamento por subscrição em Portugal. Escolhe o teu parque e um plano diário, semanal, mensal ou anual. Projeto de formação.">
+  <title>Lugar — O teu lugar. Todos os dias.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Lugar — início"><span class="brand-symbol" aria-hidden="true">P<span>•</span></span>lugar<span class="brand-dot">.</span></a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+      <nav id="main-nav" aria-label="Navegação principal">
+        <a href="#planos">Os nossos planos</a><a href="#parques">Onde estamos</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Dúvidas</a>
+      </nav>
+      <button class="button button-small button-outline header-support" data-chat>Falar com a Lugar <span class="chat-mini" aria-hidden="true"></span></button>
+    </div>
+  </header>
+  <main id="conteudo">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-line"></span> MENOS VOLTAS. MAIS VIDA.</p>
+        <h1 id="hero-title">A tua vida anda.<br>O teu lugar<br><span>fica garantido.</span></h1>
+        <p class="hero-description">Troca as voltas à procura de estacionamento por tempo para ti. Um lugar à tua espera, num parque perto de onde precisas.</p>
+        <div class="hero-actions"><a class="button" href="#planos">Encontrar o meu plano</a><a class="text-link" href="#parques">Explorar os parques</a></div>
+        <div class="hero-assurances"><span><i class="check" aria-hidden="true">✓</i> Acesso 24 horas</span><span><i class="check" aria-hidden="true">✓</i> Preço sem surpresas</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="art-topline"><span>HÁ SEMPRE UM LUGAR PARA TI</span><span aria-hidden="true">PT / 01</span></div>
+        <img src="assets/parking.svg" alt="Ilustração de um parque arborizado visto de cima, com um lugar reservado a verde e carros estacionados." width="640" height="580">
+        <div class="reserved-card"><span class="reserved-icon" aria-hidden="true">✓</span><div><strong>Já tens lugar.</strong><span>O próximo passo é teu.</span></div><span class="card-parking" aria-hidden="true">P</span></div>
+        <span class="art-caption">Estaciona. Respira. Segue o teu dia.</span>
+      </div>
+    </section>
+    <div class="coverage-strip"><div class="container coverage-inner"><p>À tua espera,<br><strong>de norte a sul.</strong></p><div class="city-names"><span>Lisboa</span><span>Porto</span><span>Braga</span><span>Coimbra</span><span>Faro</span><span>Funchal</span></div></div></div>
+    <section id="planos" class="section container" aria-labelledby="plans-title">
+      <div class="section-heading"><div><p class="eyebrow">UM LUGAR À TUA MEDIDA</p><h2 id="plans-title">Os teus dias mudam.<br>O teu plano acompanha.</h2></div><p>Um dia de reuniões ou um ano de rotinas.<br>Escolhe o tempo que faz sentido para ti.</p></div>
+      <div class="plans-grid">
+        <article class="plan"><span class="plan-tag">PARA UMA PASSAGEM</span><h3>Diário</h3><p class="plan-description">Um dia tranquilo na cidade.</p><p class="price">6<span>€</span><small>/ dia</small></p><p class="billing">Pagamento único · 24 horas</p><ul class="feature-list"><li>Um lugar no parque escolhido</li><li>Entradas e saídas ilimitadas</li><li>Acesso durante 24 horas</li></ul><button class="button button-outline" data-plan="Diário">Escolher diário</button></article>
+        <article class="plan"><span class="plan-tag">PARA FICAR MAIS UM POUCO</span><h3>Semanal</h3><p class="plan-description">Sete dias, menos uma preocupação.</p><p class="price">29<span>€</span><small>/ semana</small></p><p class="billing">Pagamento único · 7 dias</p><ul class="feature-list"><li>Tudo o que o diário inclui</li><li>7 dias consecutivos de acesso</li><li>Ideal para trabalho ou férias</li></ul><button class="button button-outline" data-plan="Semanal">Escolher semanal</button></article>
+        <article class="plan plan-featured"><span class="popular">O FAVORITO DAS ROTINAS</span><span class="plan-tag">PARA O TEU DIA A DIA</span><h3>Mensal</h3><p class="plan-description">A tua rotina, com lugar marcado.</p><p class="price">89<span>€</span><small>/ mês</small></p><p class="billing">Renovação mensal · sem fidelização</p><ul class="feature-list"><li>Acesso 24/7 ao parque escolhido</li><li>Entradas e saídas ilimitadas</li><li>Cancela antes da renovação</li></ul><button class="button" data-plan="Mensal">Escolher mensal</button></article>
+        <article class="plan"><span class="plan-tag">PARA PENSAR A LONGO PRAZO</span><h3>Anual</h3><p class="plan-description">Um ano inteiro de tranquilidade.</p><p class="price">890<span>€</span><small>/ ano</small></p><p class="billing">Pagamento único · 12 meses</p><ul class="feature-list"><li>Tudo o que o mensal inclui</li><li>Poupa 178 € face a 12 meses</li><li>O equivalente a 74,17 €/mês</li></ul><button class="button button-outline" data-plan="Anual">Escolher anual</button></article>
+      </div>
+      <p class="plans-note">Preços fictícios, com IVA incluído. Cada plano dá acesso a um parque escolhido, sujeito a disponibilidade. A seleção inicia uma conversa de demonstração.</p>
+    </section>
+    <section id="como-funciona" class="how-section"><div class="container section">
+      <div class="section-heading"><div><p class="eyebrow">SIMPLES, COMO DEVE SER</p><h2>Da escolha ao lugar.<br>Sem dar mais voltas.</h2></div><p>Três passos para tirares o estacionamento<br>da tua lista de preocupações.</p></div>
+      <div class="steps-grid"><article><div class="step-icon pin-icon" aria-hidden="true">⌖</div><h3>Encontra o teu parque</h3><p>Perto de casa, do trabalho ou do próximo passeio. Escolhe a cidade e descobre os nossos parques.</p></article><article><div class="step-icon" aria-hidden="true">▤</div><h3>Escolhe o teu ritmo</h3><p>Diário, semanal, mensal ou anual. O mesmo conforto, pelo tempo de que precisas.</p></article><article><div class="step-icon" aria-hidden="true">P</div><h3>Chega e estaciona</h3><p>Na experiência proposta, recebes um código de acesso. Entras no parque e segues com o teu dia.</p></article></div>
+    </div></section>
+    <section id="parques" class="section container" aria-labelledby="parks-title">
+      <div class="section-heading"><div><p class="eyebrow">PERTO DO QUE IMPORTA</p><h2 id="parks-title">Uma cidade inteira.<br>Um lugar para ti.</h2></div><p>Do primeiro café à última reunião.<br>Encontra o teu ponto de partida.</p></div>
+      <div class="park-browser"><div class="park-list-panel"><label for="city">Onde queres estacionar?</label><div class="select-wrap"><select id="city"><option value="all">Todas as cidades</option><option>Lisboa</option><option>Porto</option><option>Braga</option><option>Coimbra</option><option>Faro</option><option>Funchal</option></select></div><p id="park-count" class="park-count" role="status">6 parques de demonstração</p><div id="park-list" class="park-list"></div><p class="demo-note">Localizações ilustrativas para este exercício.</p></div>
+      <div class="map-art"><div class="map-label"><span class="map-brand">lugar.</span><span>PELO CAMINHO, CONTIGO.</span></div><img src="assets/portugal.svg" alt="Mapa ilustrativo de Portugal continental com marcadores em Braga, Porto, Coimbra, Lisboa e Faro, e destaque para o Funchal na Madeira." loading="lazy" width="480" height="580"><span class="map-foot">O teu próximo destino começa aqui.</span></div></div>
+    </section>
+    <section class="benefits-section"><div class="container benefits-inner"><div class="benefits-intro"><p class="eyebrow">O LUXO DE NÃO PENSAR NISSO</p><h2>Mais do que estacionar.<br>Ganhar tempo.</h2><a href="#planos" class="text-link">Descobrir os planos</a></div><div class="benefits-list"><article><span aria-hidden="true">◷</span><div><h3>À tua hora, todos os dias</h3><p>Parques com acesso 24 horas, para a vida que nem sempre cabe num horário.</p></div></article><article><span aria-hidden="true">€</span><div><h3>Sabes sempre com o que contar</h3><p>Um preço definido para o período escolhido. Sem contas ao minuto.</p></div></article><article><span class="chat-mini" aria-hidden="true"></span><div><h3>Uma conversa resolve</h3><p>Planos, parques ou uma dúvida pelo caminho. O nosso assistente ajuda-te a começar.</p></div></article></div></div></section>
+    <section id="duvidas" class="section container faq-section" aria-labelledby="faq-title"><div><p class="eyebrow">VAMOS TIRAR AS DÚVIDAS?</p><h2 id="faq-title">Tudo no seu lugar.</h2><p>Ficou alguma coisa por esclarecer?<br>Estamos a uma conversa de distância.</p><button class="button button-outline" data-chat>Falar com o assistente</button></div><div class="faqs">
+      <details><summary>O meu plano funciona em todos os parques?</summary><p>Cada subscrição está associada a um único parque, escolhido no início. Podes explorar as cidades disponíveis e pedir ajuda no chat para encontrar a melhor opção.</p></details>
+      <details><summary>Posso entrar e sair várias vezes?</summary><p>Sim. Todos os planos incluem entradas e saídas ilimitadas no parque escolhido, durante o período contratado, com acesso 24 horas por dia.</p></details>
+      <details><summary>O plano mensal tem fidelização?</summary><p>Não. O plano mensal renova-se todos os meses e podes cancelar antes da próxima renovação. O plano anual corresponde a um pagamento único por 12 meses, sem renovação automática neste exercício.</p></details>
+      <details><summary>Como entro no parque?</summary><p>Na experiência fictícia da Lugar, recebes um código digital depois da adesão. Nesta página de formação não são emitidos códigos nem efetuadas reservas ou cobranças.</p></details>
+      <details><summary>Posso contratar um plano nesta página?</summary><p>Esta é uma demonstração de formação. Os botões permitem simular o início de uma adesão através do chat. Não são processados pagamentos nem reservas reais.</p></details>
+    </div></section>
+    <section class="container"><div class="closing-banner"><div><p class="eyebrow">O TEU TEMPO MERECE MAIS</p><h2>Menos voltas.<br>Mais caminho pela frente.</h2></div><a class="button button-light" href="#planos">Encontrar o meu lugar</a><span class="banner-p" aria-hidden="true">P</span></div></section>
+  </main>
+  <footer class="container footer"><div class="footer-top"><a href="#" class="brand" aria-label="Lugar — início"><span class="brand-symbol" aria-hidden="true">P<span>•</span></span>lugar<span class="brand-dot">.</span></a><span>O teu lugar. Todos os dias.</span><a href="#planos">Planos</a><a href="#parques">Parques</a><button class="text-link" data-chat>Suporte</button></div><div class="footer-bottom"><p>© <span id="year">2026</span> Lugar · Empresa fictícia criada para fins de formação.</p><p>Parques, preços e serviço ilustrativos. Sem reservas ou pagamentos reais.</p></div></footer>
+  <button id="chat-launcher" class="chat-launcher" aria-label="Abrir chat de suporte" aria-expanded="false" aria-controls="support-chat"><span class="chat-mini" aria-hidden="true"></span><span>Precisas de ajuda?</span></button>
+  <section id="support-chat" class="support-chat" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden>
+    <div class="chat-header"><span class="assistant-avatar" aria-hidden="true">P</span><div><h2 id="chat-title">Olá, somos a Lugar.</h2><p id="chat-mode">Assistente de demonstração</p></div><button id="chat-close" aria-label="Fechar chat">×</button></div>
+    <div id="chat-messages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Mensagens do suporte"></div>
+    <div class="quick-replies"><button data-question="Quais são os planos?">Ver planos</button><button data-question="Onde estão os parques?">Encontrar parque</button><button data-question="Como posso cancelar?">Cancelamento</button></div>
+    <p id="chat-status" class="chat-status" role="status"></p>
+    <form id="chat-form"><label class="sr-only" for="chat-input">A tua mensagem</label><input id="chat-input" name="message" autocomplete="off" placeholder="Escreve a tua mensagem…" maxlength="2000" required><button id="chat-send" type="submit" aria-label="Enviar mensagem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 15 7-15 7 3-7-3-7Zm3 7h12"/></svg></button></form>
+    <p class="chat-footnote" id="chat-footnote">Demonstração local · Não partilhes dados pessoais.</p>
+  </section>
+  <noscript><div class="noscript">Ativa o JavaScript para usar o chat e consultar os parques. Os planos e as perguntas frequentes continuam disponíveis.</div></noscript>
+</body>
+</html>

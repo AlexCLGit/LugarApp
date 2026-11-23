@@ -1,0 +1,108 @@
+LUGAR — Landing page para exercício de formação
+==============================================
+
+Empresa, preços e parques fictícios. Não há reservas nem pagamentos reais.
+Site estático em HTML, CSS e JavaScript, sem instalação ou compilação.
+
+ABRIR
+Abre index.html no navegador. O modo de demonstração funciona sem servidor.
+As fontes Google Fonts necessitam de internet; existe uma alternativa local
+do sistema. Os restantes elementos gráficos estão incluídos em assets/.
+Para testar um webhook, usa um servidor local ou GitHub Pages, evitando
+o endereço file:// e a sua origem null.
+
+FICHEIROS
+index.html       Conteúdo e estrutura da página.
+styles.css       Cores, estilos e adaptação a telemóveis.
+app.js           Parques, menu e funcionamento do chat.
+config.js        Configuração pública do webhook.
+assets/          Ilustrações SVG e favicon originais.
+.nojekyll        Publicação de ficheiros estáticos sem processamento Jekyll.
+
+PUBLICAR EM GITHUB PAGES
+1. Cria um repositório GitHub (público, se utilizares GitHub Free).
+2. Coloca o CONTEÚDO desta pasta na raiz do repositório. O index.html deve
+   estar na raiz, juntamente com styles.css, app.js, config.js e assets/.
+3. No repositório, abre Settings > Pages.
+4. Em Build and deployment, escolhe Deploy from a branch.
+5. Seleciona a branch main e a pasta / (root), e guarda.
+6. Quando terminar a publicação, abre o endereço indicado no painel Pages.
+Os caminhos são relativos e funcionam também em /nome-do-repositorio/.
+Não é necessário npm, framework, base de dados ou GitHub Actions próprio.
+
+LIGAR O CHAT AO N8N
+1. Cria um workflow com um nó Webhook:
+   - HTTP Method: POST
+   - Path: lugar-suporte (ou outro à tua escolha)
+   - Respond: Using 'Respond to Webhook' Node
+2. Liga esse nó à tua lógica (por exemplo, um agente ou um nó que constrói
+   uma resposta). A mensagem recebida está em $json.body.message no Webhook.
+   O identificador da conversa está em $json.body.sessionId.
+3. Termina com um nó Respond to Webhook, devolvendo JSON neste formato:
+   { "reply": "Olá! Em que cidade queres estacionar?" }
+   Content-Type da resposta: application/json.
+   O front-end também aceita os campos output ou message como texto.
+4. Configura Allowed Origins (CORS) no Webhook com a origem do teu site:
+   https://O-TEU-UTILIZADOR.github.io
+   A origem não inclui /nome-do-repositorio/. Para testes locais, utiliza
+   a origem exata do servidor local, incluindo a porta.
+   O servidor/proxy deve permitir o preflight OPTIONS e POST com
+   Content-Type: application/json. Não uses mode: no-cors: impede ler a resposta.
+5. Publica/ativa o workflow e copia a Production URL do nó Webhook.
+6. Abre config.js e preenche webhookUrl com essa URL HTTPS. Guarda e volta
+   a publicar o ficheiro no GitHub. A Test URL só funciona enquanto o nó
+   estiver à escuta de eventos de teste; não a uses na publicação final.
+
+Exemplo de config.js:
+window.LUGAR_CONFIG = Object.freeze({
+  webhookUrl: "https://O-TEU-N8N/webhook/lugar-suporte",
+  timeoutMs: 20000,
+  maxHistoryMessages: 20
+});
+
+CONTRATO DO PEDIDO (POST JSON)
+{
+  "sessionId": "identificador-aleatorio-da-sessao",
+  "requestId": "identificador-unico-do-pedido",
+  "message": "Tenho interesse no plano Mensal. Como funciona?",
+  "history": [
+    { "role": "user", "content": "Tenho interesse no plano Mensal. Como funciona?" }
+  ],
+  "context": { "plan": "Mensal", "city": null, "park": null },
+  "source": "lugar-landing",
+  "locale": "pt-PT",
+  "timestamp": "2026-11-23T12:00:00.000Z"
+}
+
+history contém até 20 mensagens e já inclui a mensagem atual. Não acrescentes
+a mensagem atual duas vezes ao montar o contexto para um modelo. A saudação
+inicial da interface e mensagens de erro não são incluídas nesse histórico.
+context transporta as escolhas feitas nos botões e no filtro da página.
+O workflow deve interpretar também a mensagem escrita pelo visitante.
+
+O botão Tentar novamente reutiliza o mesmo requestId. Se acrescentares ações
+com efeitos no backend, usa esse identificador para impedir duplicações.
+Uma expiração do pedido no navegador não cancela necessariamente o workflow.
+Se o servidor falhar, o chat mostra um erro; não inventa uma resposta local.
+Sem webhookUrl, o chat responde localmente e não envia mensagens à rede.
+
+SEGURANÇA E SESSÃO
+config.js, o webhookUrl e todo o código do GitHub Pages são públicos.
+Não coloques chaves de API, tokens n8n ou credenciais nestes ficheiros.
+Mantém as credenciais do modelo e de outros serviços dentro do n8n.
+CORS não é autenticação. Para uso real, coloca validação e limites no backend.
+Apenas o ID aleatório da sessão é guardado em sessionStorage. As mensagens
+ficam em memória e desaparecem ao recarregar a página. Com webhook configurado,
+as mensagens são enviadas ao endpoint e a retenção passa a depender do n8n.
+As respostas são mostradas como texto: HTML do webhook não é executado.
+
+PERSONALIZAR
+Preços e descrições: index.html e respostas de demonstração em app.js.
+Parques: array parks no início de app.js e mapa SVG ilustrativo.
+Cores: variáveis no início de styles.css.
+
+REFERÊNCIAS OFICIAIS
+https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/
+https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook/
